@@ -1,0 +1,71 @@
+{
+  "name": "untera-global-property-price-datasets-2026",
+  "title": "Untera Global Property Price Datasets — June 2026",
+  "description": "Open datasets on international residential property asking prices, compiled by Untera from 190+ listing sources across 70+ countries. Frozen June 2026 snapshot.",
+  "homepage": "https://untera.io/press",
+  "version": "2026.06",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "sources": [
+    { "title": "Untera", "path": "https://untera.io" }
+  ],
+  "contributors": [
+    { "title": "William Marsh", "role": "author", "organization": "Untera" }
+  ],
+  "keywords": ["real estate", "housing prices", "international property", "price per square meter", "affordability", "open data"],
+  "resources": [
+    {
+      "name": "global-home-price-index-2026",
+      "path": "data/untera-global-home-price-index-2026.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "title": "Global Home-Price Index 2026",
+      "schema": {
+        "fields": [
+          { "name": "rank", "type": "integer", "description": "Cheapest (1) to most expensive" },
+          { "name": "country_code", "type": "string", "description": "ISO 3166-1 alpha-2" },
+          { "name": "country", "type": "string" },
+          { "name": "median_home_price_usd", "type": "integer", "description": "Median listing asking price, USD" },
+          { "name": "listings_sampled", "type": "integer", "description": "Number of live listings behind the figure" }
+        ]
+      }
+    },
+    {
+      "name": "global-price-per-sqm-2026",
+      "path": "data/untera-global-price-per-sqm-2026.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "title": "Global Price-per-m² Index 2026",
+      "schema": {
+        "fields": [
+          { "name": "rank", "type": "integer", "description": "Cheapest (1) to most expensive" },
+          { "name": "country_code", "type": "string", "description": "ISO 3166-1 alpha-2" },
+          { "name": "country", "type": "string" },
+          { "name": "usd_per_sqm", "type": "integer", "description": "Median asking price per square meter, USD" },
+          { "name": "listings_sampled", "type": "integer", "description": "Number of live listings behind the figure" }
+        ]
+      }
+    },
+    {
+      "name": "what-250k-buys-2026",
+      "path": "data/untera-what-250k-buys-2026.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "title": "What $250,000 Buys Around the World 2026",
+      "schema": {
+        "fields": [
+          { "name": "country_code", "type": "string", "description": "ISO 3166-1 alpha-2" },
+          { "name": "country", "type": "string" },
+          { "name": "listings_under_250k", "type": "integer", "description": "Count of live listings priced at or below USD 250,000" },
+          { "name": "median_price_usd", "type": "integer", "description": "Median price of sub-250k listings, USD" },
+          { "name": "cheapest_usd", "type": "integer", "description": "Cheapest valid listing recorded, USD" }
+        ]
+      }
+    }
+  ]
+}
