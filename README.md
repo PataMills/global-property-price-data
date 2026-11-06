@@ -22,7 +22,10 @@ under a [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.o
 | `data/untera-global-price-per-sqm-2026.csv` | Median asking price per square meter, by country (USD) | 62 |
 | `data/untera-what-250k-buys-2026.csv` | How many homes a USD 250,000 budget can buy, by country | 66 |
 
-Each row carries a `listings_sampled` count so you can weight or filter by sample size.
+The home-price and price-per-square-meter files include `listings_sampled` for
+filtering by sample size. The $250k file instead includes `listings_under_250k`,
+the count of listings priced at or below USD 250,000; it has no `listings_sampled`
+column.
 
 ### Column dictionaries
 
