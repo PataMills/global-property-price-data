@@ -1,5 +1,12 @@
 # Untera Global Property Price Datasets — June 2026
 
+> **ZIP documentation notice (2026-11-08):** `Data Bundle Untera.zip` retains
+> its original README and methodology, which do not include the later documentation
+> corrections. Before using the bundle, read the
+> [updated methodology and limitations](methodology.md#capture-dates-and-cohort-clarification-2026-11-06)
+> and this README's [column descriptions](#column-dictionaries). The frozen ZIP and
+> CSVs are unchanged. This notice does not revise any separately published DOI edition.
+
 Open, citeable data on what homes actually cost around the world, compiled by
 **[Untera](https://untera.io)** — an independent platform aggregating international
 property listings from 190+ sources across 70+ countries.
