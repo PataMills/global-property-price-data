@@ -27,12 +27,15 @@ under a [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.o
 |------|------------------|-----------|
 | `data/untera-global-home-price-index-2026.csv` | Median asking price of a home, by country (USD) | 39 |
 | `data/untera-global-price-per-sqm-2026.csv` | Median asking price per square meter, by country (USD) | 62 |
-| `data/untera-what-250k-buys-2026.csv` | How many homes a USD 250,000 budget can buy, by country | 66 |
+| `data/untera-what-250k-buys-2026.csv` | Frozen qualifying-listing counts and asking-price summaries within a USD 250,000 budget, by country | 66 |
 
 The home-price and price-per-square-meter files include `listings_sampled` for
 filtering by sample size. The $250k file instead includes `listings_under_250k`,
-the count of listings priced at or below USD 250,000; it has no `listings_sampled`
-column.
+a count within the frozen budget cohort; it has no `listings_sampled` column.
+The recorded source query uses a USD 10,000–250,000 inclusive range and a default
+minimum of 30 qualifying rows per country. See the
+[budget cohort clarification](methodology.md#budget-cohort-clarification-2026-11-08)
+for all filters and the limits of this source reconstruction.
 
 ### Column dictionaries
 
@@ -51,9 +54,12 @@ column.
 
 **`untera-what-250k-buys-2026.csv`**
 - `country_code`, `country` — as above
-- `listings_under_250k` — count of live listings priced at or below USD 250,000
-- `median_price_usd` — median price of those sub-250k listings
-- `cheapest_usd` — cheapest listing recorded in that country
+- `listings_under_250k` — reported count in the frozen budget cohort; the recorded query uses USD 10,000–250,000 inclusive
+- `median_price_usd` — reported median asking price within that cohort, USD
+- `cheapest_usd` — reported minimum asking price within that cohort, USD; not an independently established national minimum
+
+These descriptions follow the retained source query; historical execution is not
+independently verified. See the linked budget cohort clarification above.
 
 ---
 

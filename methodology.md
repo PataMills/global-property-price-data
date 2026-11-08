@@ -63,10 +63,40 @@ snapshot's source notes warn that some sources may report plot or land area
 instead, which can lower the per-m² figure. Sample counts must be interpreted
 separately from the home-price index, as explained above.
 
+### Budget cohort clarification (2026-11-08)
+
 **What $250k buys (`listings_under_250k`, `median_price_usd`, `cheapest_usd`).**
-We count live for-sale listings priced at or below **USD 250,000** per country,
-report the median price within that sub-250k set, and record the single cheapest
-valid listing. This reflects breadth of affordable supply, not just a single average.
+The retained snapshot source records a **2026-06-24** capture of
+`listings/budget-finder?maxPrice=250000`. The published 66-country CSV is
+byte-identical to the historical application CSV, and its values match the
+retained snapshot module.
+
+At application commit `edf6d811c1c6dd42386f68204d08959bc0cda5ec`, the endpoint's
+query for that documented request uses `status='active'`,
+`publicationStatus='ready'`, `transactionType='sale'`, a default
+`type='residential'`, a nonempty country, and normalized USD asking prices from
+**10,000 through 250,000 inclusive**. The request supplies no bedroom minimum.
+By default, a country needs at least **30 qualifying rows**. The query orders
+countries by qualifying count, descending, and returns at most **80 countries**.
+
+The recorded query computes the count, continuous median, and minimum normalized
+USD asking price within that filtered cohort; median and minimum are rounded to
+whole dollars. Under these rules, `cheapest_usd` is a filtered-cohort minimum,
+not an independently established national minimum. `listings_under_250k` is not
+a count of every property priced below the budget. These frozen values do not establish
+current listing availability.
+
+This is a reconstruction from the snapshot module and endpoint source, not a
+query-execution receipt. The deployed version, actual historical request
+parameters, exact extraction time and timezone, and row-level inputs have not
+been independently verified.
+All 66 reported minima are at least USD 10,000, consistent with the recorded
+lower bound, but this does not prove execution of these rules, establish that
+any excluded records existed, or quantify effects on counts, medians, or minima.
+The source files are `client/src/data/budget250k2026.js`,
+`client/public/datasets/untera-what-250k-buys-june-2026.csv`, and
+`server/src/routes/listings.js` at the application commit above; those
+implementation records are not included in this public bundle.
 
 ## Currency
 
